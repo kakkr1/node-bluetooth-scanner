@@ -61,7 +61,9 @@ var BluetoothScanner = module.exports = function(hcidev) {
               console.log("hcitool dev: done (code " + code + ")");
               
               // Start scan
-              var hciToolScan = spawn(tool_path + 'hcitool', ['scan']);
+              var hciToolScan = spawn(tool_path + 'hcitool', ['scan']);]
+               /** Use below var if running on rasberry pi
+              var hciToolScan = spawn(tool_path + 'hcitool', ['scan', '--flush' ]);**/
               console.log("hcitool scan: started...");
 
               hciToolScan.stdout.on('data', function(data) {
